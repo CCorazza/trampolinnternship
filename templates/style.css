@@ -1,0 +1,220 @@
+<style>
+html{
+	position: relative;
+	border: none;
+}
+
+body {
+	color: #494A49;
+	width: 100%;
+	font-size: 15px;
+	margin: 0;
+	margin-bottom: 30px;
+}
+
+hr {
+	display: inline;
+	visibility: hidden;
+}
+
+span {
+	color: #919395;
+}
+
+form {
+	margin: 0 auto;
+	width: 420px;
+}
+
+p {
+	text-align: justify;
+	text-indent: 6px;
+}
+figure {
+	display: inline-table;
+	width:240px;
+	margin: auto;
+}
+
+.bave {
+	width: 269px;
+	height: 178px;
+}
+
+.blue {
+	background-color: rgba(165, 204, 228, 0.21);
+	padding: 9px 0;
+}
+
+.button {
+	color: #fff;
+	font-size: 24px;
+	margin: auto;
+	padding: 9px;
+	background-color: #41A2CF;
+	box-shadow: 3px 3px solid #fff inset;
+	border-style: none;
+	border-radius: 3px;
+}
+
+.buttup {
+	color: #fff;
+	font-size: 18px;
+	margin: auto;
+	padding: 9px;
+	background-color: #41A2CF;
+	box-shadow: 3px 3px solid #fff inset;
+	border-style: none;
+	border-radius: 3px;
+	text-align: right;
+}
+
+.center {
+	margin: 0 auto;
+	min-width: 480px;
+}
+
+.col {
+	margin: auto;
+	position: relative;
+	display: inline-block;
+	padding: 15px;
+}
+.col1 {
+	margin: auto;
+	position: relative;
+	display: inline-block;
+	padding: 15px;
+	min-width: 420px;
+}
+.col2 {
+	margin: auto;
+	position: relative;
+	display: inline-block;
+	padding: 15px;
+	min-width: 420px;
+	text-align: right;
+}
+
+.container {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	width: 100%;
+}
+
+#git {
+	position: absolute;
+	right:0;
+}
+#welcome {
+	display: block;
+	height: 720px;
+	background-color: #389C97;
+	background-image: url("http://barcelona-home.com/blog/wp-content/gallery/parc-guell/amazing-rooftop-view-from-parc-guell.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+#welcomebonus {
+	display: block;
+	height: 720px;
+	background-color: #000000;
+	background-image: url("http://images6.alphacoders.com/330/330671.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+#welcomeBottom{
+	display: inline-block;
+	position: absolute;
+	font-size: 0.9em;
+	top: 480px;
+	color: #fff;
+	padding: 30px;
+	height: 240px;
+	background-color: rgba(42, 42, 42, 0.60);
+	column-count:3;
+	column-gap:1.5em;
+	-moz-column-count:3;
+	-moz-column-gap:1.5em; /* Firefox */
+	-webkit-column-count:3;
+	-webkit-column-gap:1.5em; /* Chrome, Safari, Opera */
+	overflow: hidden;
+}
+
+#welcomeBottom h2 {
+	font-size: 1.8em;
+}
+
+#subscribe, #apsubscribe, #upload, #apupload, #bonus, #show #beach, #club{
+	display:block;
+	min-height: 42px;
+}
+
+#subscribe, #apupload {
+	margin: 0 auto;
+	width: 720px;
+}
+
+#show, #beach, #club {
+	margin: auto;
+	display: flex;
+}
+
+#bonus {
+	opacity:0.42;
+}
+#bonus img{
+	padding: auto;
+	margin: 3% 30%;
+}
+
+#show {
+	display:inline-table;
+}
+
+#showimg {
+	width:140px;
+	height: 140px;
+	border-radius: 70px;
+}
+
+#footer {
+	font-variant: small-caps;
+	margin: 3px 0 0;
+	border: 0;
+	color:#75787E;
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	height: 30px;
+	background-color: #f5f5f5;
+	text-align: right;
+	vertical-align: middle;
+	padding-top: 9px;
+}
+#footer p {
+	padding-right: 9px;
+}
+#footer a:link{
+	text-decoration: none;
+	color:#75787E;
+}
+#footer a:visited{
+	color:#75787E
+}
+#footer a:hover{
+	color:#4F535A;
+}
+#footer hr {
+	display: inline;
+	margin-left: 9px;
+	margin-right: 15px;
+	width: 2px;
+	height: 12px;
+	background-color: #919395;
+}
+</style>

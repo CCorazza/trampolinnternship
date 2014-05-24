@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}HAI DISIZ 8BIT{% endblock %}
+{% block script %}if ( window.addEventListener ) {
+				var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+				window.addEventListener("keydown", function(e){kkeys.push( e.keyCode );
+				console.log();
+				if ( kkeys.toString().indexOf( konami ) >= 0 ) {
+					window.location = "/";
+				}
+				}, true);
+			}
+{% endblock %}
+{% block welcome %}
+	<div id="welcomebonus">
+		<div id="welcomeBottom">
+			<h2>Oh ! Hai !</h2>
+			Bienvenue @ Aperture Resort, des vacances inoubliables pour toute la famille. Venez vous dépenser, vous reposer et faîtes progresser la science tout en gagnant de l'argent avec notre plan de rémunération de VOS vacances !
+			<br />
+			<br />
+			<h2>Aperture Resort, le paradis des tout-petits !</h2>
+			Duis purus tellus, luctus sit amet diam vel, porttitor bibendum ipsum. Phasellus rhoncus felis ut nisi rutrum porttitor. Vestibulum lobortis dignissim imperdiet. 
+			<h2>Cras tristique purus erat,</h2> sed dapibus purus porttitor et. Integer sollicitudin nisi eu nibh condimentum, quis posuere risus adipiscing. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ullamcorper, turpis tincidunt ornare pharetra, ipsum nulla pulvinar eros.
+		</div>
+	</div>
+{% endblock %}
+{% block content %}
+	<section id="showroom">
+		<p class="center">
+		<h2>Bienvenue !</h2>
+			<figure>
+				<img src="http://media.melty.fr/article-767571-ajust_930/un-mod-portal-2-dans-skyrim.jpg" id="showimg"> 
+				<figcaption> Voyagez dans l'espace ! </figcaption>
+			</figure>
+			<figure>
+				<img src="http://image.jeuxvideo.com/images/p3/p/o/portal-2-playstation-3-ps3-1310131361-191_m.jpg" id="showimg"> 
+				<figcaption> Reposez-vous dans un lit douillet ! </figcaption>
+			</figure>
+			<figure>
+				<img src="http://t0.gstatic.com/images?q=tbn:ANd9GcSgoh3BVuhrk7ivChG2EslceemrYC53mqacqG6hDHKJ7OVYXQsdwfp9G7_9aA" id="showimg"> 
+				<figcaption> Visitez les clubs les plus chauds en bonne compagnie ! </figcaption>
+			</figure>
+			<figure>
+				<img src="http://img.wonderhowto.com/img/21/06/63495582807945/0/when-life-gives-you-lemons-make-lemon-grenades-portal-2s-cave-johnson-would-be-proud.w654.jpg" id="showimg"> 
+				<figcaption> Make Lemonade ! </figcaption>
+			</figure>
+		</p>
+	</section>
+{% endblock %}
+{% block subscription %}
+	<section class="blue" id="apsubscribe">
+		<p class="center">
+		<h2>Prêts à partir ? </h2>
+		Pour recevoir votre invitation GRATUITE en TWO EASY STEP, il vous suffit d'enregistrer votre adresse e-mail dans le formulaire ci-dessous.	
+		</p>
+		{% if done == False %}
+		<form action="" method="post">
+			{% csrf_token %}
+			{{ form }}
+			<input class="button" type="submit" value="Inscription">
+		</form>
+		{% else %}
+			{{ form }}
+		{% endif %}	
+	</section>
+{% endblock %}
+{% block upload %}
+	<section class="center"> 
+	<h2> Ou voyez plus grand <span>...</span></h2>
+	Vous pouvez aussi ajouter un fichier, et nous nous chargeons d'envoyer sur la Lune tous les amis que vous inscrivez à notre programme scientifique de POINTE.<br /><br />
+	{% if done2 == False %}
+	<form class="buttup" action="" method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{ form2 }}
+	<input type="submit" value="Uploader" />
+	</form>
+	{% else %}<br />
+	{% if empty == False %}
+	<p>Liste des adresses ajoutées : </p>
+	{% for addr in form2 %}
+	<p>{{ addr }}</p>
+	{% endfor %}
+	{% else %}
+	<p>Aucune adresse n'a ete ajoutee</p>
+	{% endif %}
+	{% endif %}
+	<br />
+	</section>
+{% endblock %}
+{% block bonus %}
+{% endblock %}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+	<head>
+		<title>{% block title %}Accueil{% endblock %}</title>
+			{% load bootstrap3 %}
+			{% bootstrap_css %}
+		<script type="text/javascript">
+			{% block script %} if ( window.addEventListener ) {
+				var kkeys = [], konami = "38,38,40,40,37,39,37,39,66,65";
+				window.addEventListener("keydown", function(e){kkeys.push( e.keyCode );
+				console.log();
+				if ( kkeys.toString().indexOf( konami ) >= 0 ) {
+					window.location = "8b";
+				}
+				}, true);
+			}{% endblock %}
+		</script>
+		{% block css %}{% include "style.css" %}{% endblock %}
+	</head>
+	<body>
+		<section>{% block welcome %}
+			<div id="welcome">
+			<div id="welcomeBottom">
+					<h2>Vous aimez les voyages ?</h2>
+					Comme tout le monde, me direz-vous.
+					Bien souvent, le plus difficile est de savoir où partir.
+					<br />
+					<br />
+					Duis purus tellus, luctus sit amet diam vel, porttitor bibendum ipsum. Phasellus rhoncus felis ut nisi rutrum porttitor. Vestibulum lobortis dignissim imperdiet. 
+					<h2>Cras tristique purus erat,</h2>
+					sed dapibus purus porttitor et. Integer sollicitudin nisi eu nibh condimentum, quis posuere risus adipiscing. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ullamcorper, turpis tincidunt ornare pharetra, ipsum nulla pulvinar eros, non tincidunt neque leo quis massa. Sed sem leo, fringilla sit amet vestibulum et, scelerisque ac orci. Suspendisse potenti. Suspendisse eget est eget urna blandit dapibus.
+			</div>
+			</div>
+				{% endblock %}
+			
+		</section>
+		<div class="container">
+		{% block content%}
+			<section id="beach">
+				<div class="center">
+					<div class="col1">
+						<h2>De jour<span>...</span></h2>
+						<p>
+							sur les plages
+						</p>
+					</div>
+					<div class="col">
+						<img class="bave" src="http://www.apartmentbarcelona.com/blog/wp-content/uploads/2012/06/Barcelona-Beaches1.jpg">
+					</div>
+				</div>
+			</section>
+			<section class="blue" id="club">
+				<div class="center">
+					<div class="col">
+						<img class="bave" src="http://barcelona.vip-incard.com/uploads/tx_jpcarousel/Soho_Nightclub_Barcelona_2.jpg">
+					</div>
+					<div class= "col2">
+						<h2><span>...</span> Comme de nuit</h2>
+						<p class="col2">
+						dans les clubs
+						</p>
+					</div>
+				</div>
+			</section>
+		{% endblock %}
+		{% block subscription %}
+			<section id="subscribe">
+				<p class="center">
+					<h2>Vous cherchez une idée de voyage ? </h2>
+					Inscrivez-vous à notre newsletter en enregistrant votre adresse e-mail dans le formulaire ci-dessous, sélectionnez la fréquence d'envoi de vos mails, et laissez-vous porter par votre imagination.
+				</p>
+				{% if done == False %}
+					<form action="" method="post">
+					{% csrf_token %}
+						{{ form }}
+						<input class="button" type="submit" value="Inscription">
+					</form>
+					{% else %}
+						{{ form }}
+					{% endif %}		
+			</section>
+		{% endblock %}
+		{% block upload %}
+			<section class="blue" id="upload">
+				<h2> Vos amis seraient intéressés ? </h2>
+				<p class="center">
+					Si vous avez plusieurs utilisateurs à ajouter d'un coup, le plus simple est d'uploader un fichier. Nous nous chargeons de récupérer les adresses contenues dans ce document et de les faire rêver tous les mois.
+				</p>
+				{% if done2 == False %}
+				<form class="buttup" action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ form2 }}
+					<input type="submit" value="Uploader" />
+				</form>
+					{% else %}<br />
+				        {% if empty == False %}
+					<p>Liste des adresses ajoutées : </p>
+					{% for addr in form2 %}
+						<p>{{ addr }}</p>
+					{% endfor %}
+					{% else %}
+				        <p>Aucune adresse n'a ete ajoutee</p>
+					{% endif %}
+				{% endif %}
+				<br />
+			</section>
+		{% endblock %}
+		{% block bonus %}
+			<section id="bonus">
+				<img src="http://img.over-blog-kiwi.com/0/33/29/52/201212/1355923813.2966.png">
+			</section>
+		{% endblock %}
+			<section id="footer">
+					<a href="#">Back to top </a><hr />©<a href="https://github.com/Curcolio">ccorazza</a> @ <a href="www.42.fr">42</a>
+			</section>
+		</div>
+	</body>
+</html>
