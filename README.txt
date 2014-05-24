@@ -11,7 +11,7 @@ A unique webpage trip-themed with a form and a parser to test one's ability to l
 - Unix (os X Mavericks)
 - Apache
 - MySQL
-- Python (Django)
+- Python (Django) 2.7 / ! \
 - Web (HTML - CSS)
 
 ### Requirements ###
@@ -21,26 +21,22 @@ Officially we should use bitnami djangostack, and I started working on it, then 
 Though it SHOULD run smoothly with apache and mod-wsgi on os X Mavericks, I haven't fully tested it. ###
 
 #Install:
-sudo apt-get install
+sudo pip install
+    django-bootstrap3
+    django_admin_bootstrapped
     libapache2-mod-wsgi
-    python (import django)
+    mysql-python
 
-#in the folder ---
-tar xzvf trampolinnternship.tar.gz
-
-#The application folder for django here is /Volumes/data/nfs/zfs-student-5/users/2013/ccorazza/django/apps/django/django_projects/
-#since that is a bit long, you can either in Sublime Text with cmd + maj + F replace every
-#    /Volumes/data/nfs/zfs-student-5/users/2013/ccorazza/django/apps/django/django_projects/
-#with your own preferred pathway 
-#
-# OR
-#
-#use copy the 
+#I chose to use online pictures, so the .tar would not be too large
+#in any folder
+tar xf internship.tar
 
 #Running:
 #create an alias manage="python manage.py"
 
-manage 
+manage createsuperuser
+#hint: there is already a demo user set (name demo, pwd demo), but feel free to create your own account
+manage syncdb
 
 
 ### What you need to do ###
@@ -49,6 +45,9 @@ Test the konami Code !
 
 Then, if you wish so, add an adress email (spambot free guaranteed),
 or many !
+
+/ ! \ to upload a file, I use data() (line 13 in landingpage/views.py)
+
 
 ### Acknowledgement ###
 
